@@ -1,0 +1,7 @@
+
+.App{
+    min-height: 100vh;
+    background-image: url(/sfsites/c/resource/BMICalculator);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

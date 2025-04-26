@@ -1,0 +1,58 @@
+<template>
+    <div class="App">
+        <div class="Box" style="background: black;text-align: center;max-width: 400px;margin: auto;color: white;padding: 15px;border-radius: 30px;">
+            <h1 style="font-size: 35px;padding: 20px;font-weight: bold;">BMI Calculator</h1>
+            <template if:true={result}>
+            
+                <section>
+                    <div>
+                    <h2 style="font-size: 20px;color: #c7092a;"> Your  Bmi value is: </h2>
+                    </div>
+                    <div>
+                    <h2 style="font-size: 20px;color: #4ad9f6;"> {Bmi}</h2>
+                    </div>
+                    <div>
+                    <h2 style="font-size: 20px;color: #c7092a;"> So you are:</h2>
+                    </div>
+                    <div style="font-size: 20px;color: #4ad9f6;">
+                    <h2>{result}</h2>  
+                    </div>
+                    <lightning-button 
+                    variant="brand"
+                    label="Re-Calculate" 
+                    onclick={recalculate} 
+                    ></lightning-button>
+                </section>
+            </template>
+            <template if:false={result}>
+                <form onsubmit={submithandler}>
+                    <div class="slds-form-element slds-var-m-bottom_medium">
+                        <label class="slds-form-element__label slds-text-title_bold" for="text-input-id-46" style="color: white;"> Height(Cm)</label>
+                        <div class="slds-form-element__control">
+                        <input type="number" name="height" min="0" id="text-input-height"  placeholder="Enter Your Height" onchange={inputhandler} required class="slds-input" style="width: 300px;padding:8px;font-size:14px;color:#1d1e33;"/>
+                        </div>
+                    </div>
+                    <div class="slds-var-m-bottom_medium">
+                        <label class="slds-form-element__label slds-text-title_bold"  for="text-input-id-46" style="color: white;" > Weight(Kg)</label>
+                        <div class="slds-form-element__control">
+                        <input type="number" name="weight" min="0" id="text-input-weight" placeholder="Enter Your Weight" onchange={inputhandler} required class="slds-input" style="width: 300px;padding:8px;font-size:14px;color:#1d1e33;"/>
+                        </div>
+                    </div>
+                    <lightning-button variant="brand" label="Calculate" title="Primary action" onclick={calculate} class="slds-m-bottom_x-large" style="padding: 8px;"></lightning-button>
+                </form>
+            </template>
+            <div class="info" style="background-color: #1d1e33;padding: 16px;border-bottom-left-radius: 38px;border-bottom-right-radius: 38px;font-size: 14px;text-align: center;">
+                <h2 style="font-size: 20px;color: #c7092a;"> What your BMI means </h2>
+                <p class="slds-var-m-bottom_medium slds-text-heading_medium"> Once you have measured your BMI , You can determine healthy weight range.If Your BMI is :  </p>
+                <h3 class="slds-text-color_error" style="font-size: 20px;"> Under 18.5 </h3>
+                <p class="slds-var-m-bottom_medium slds-text-heading_medium"> You are very underweight and possibly malnourished.</p>
+                <h3 class="slds-text-color_success" style="font-size: 20px;"> Between 18.5 to 24.9.</h3>
+                <p class="slds-var-m-bottom_medium slds-text-heading_medium"> You have healthy weight range for young and middle aged adults. </p>
+                <h3 class="slds-text-color_error" style="font-size: 20px;"> Between 25.0 to 29.9</h3>
+                <p class="slds-var-m-bottom_medium slds-text-heading_medium"> You are over weight</p>
+                <h3 class="slds-text-color_error" style="font-size: 20px;"> Over 30</h3>
+                <p class="slds-var-m-bottom_medium slds-text-heading_medium"> You are Obese</p>
+            </div>
+        </div>
+    </div>
+</template>
