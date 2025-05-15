@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 400px;
+    padding: 16px;
+}
+.icon{
+    --slds-c-icon-color-background:#f9ba49;
+    --slds-c-icon-color-foreground:#032057;
+    --slds-c-icon-color-foreground-default:#f9ba49;
+    transform: rotate(45deg);
+}
+.Cur-app{
+    background: url('/resource/currencybackground');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.slds-card{
+    max-width: 550px;
+    background: #032057;
+    border-radius: 25px;
+    padding: 16px;
+}
+button{
+    background: #f9ba49;
+    color: #0c2451;
+    padding: 12px;
+    font-size: 24px;
+    margin-top: 12px;
+}
+.base-line{
+    align-items: baseline;
+}
+img{
+    display: block;
+    margin: auto;
+}
